@@ -1554,5 +1554,7 @@ from random import randint
 # print(a)
 # a.clear()
 # print(a)
+#
+# print("Hello")
 
-print("Hello")
+print("Данные для добавления на GitHub")
