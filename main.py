@@ -1557,4 +1557,4 @@ from random import randint
 #
 # print("Hello")
 
-print("Данные для добавления на GitHub")
+print("Изменения внесённые на другой машине")
