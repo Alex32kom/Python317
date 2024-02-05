@@ -1135,7 +1135,7 @@
 # print(time.ctime(4464461))
 # res = time.localtime()
 # print(res)
-# print(res.tm_mday, ".", res.tm_mon, ".", res.tm_year, sep="")
+# print(res,.tm_mday, ".", res.tm_mon, ".", res.tm_year, sep="")
 #
 # print(time.strftime("Сегодня: %B %d, %Y"))
 # print(time.strftime("%B %d, %Y", time.localtime(574464461)))
@@ -1164,14 +1164,14 @@
 
 
 # def get_sum(a, b):
-#     # print(a + b)
-#     return a + b  # 2 + 5 => 7
+#     print("Hello")
+#     return a + b
 #
 #
 # x = 2
 # y = 5
 # res = get_sum(x, y)
-# print(res ** 2)
+# print(res)
 # print(get_sum(9, 4))
 # n = 6
 # m = 3
@@ -1186,7 +1186,7 @@
 #         return two
 #
 #
-# m = maximum(16, 16)
+# m = maximum(9, 16)
 # print(m)
 
 # def foo(a, b):
@@ -1195,48 +1195,47 @@
 #     else:
 #         return a + b
 #
-#
 # c = foo(int(input()), int(input()))
 # print(c)
+
 
 # def cube(a):
 #     return a * a * a
 #
 #
 # for i in range(1, 11):
-#     print(i, "в кубе =", cube(i))
+#     print(i, "в кубе = ", cube(i))
 
 
 # def change(lst):
-#     # lst[0], lst[-1] = lst[-1], lst[0]
+#     # lst[0], lst[-1] = lst[-1], lst[0]   #Замена местами индексы элементов
 #     start = lst.pop()
 #     end = lst.pop(0)
 #     lst.append(end)
 #     lst.insert(0, start)
+#
 #     return lst
-#
-#
+
+#                                         ЧЕРЕЗ циклы!!!
+
 # print(change([1, 2, 3]))
 # print(change([9, 12, 33, 54, 105]))
 # print(change(['с', 'л', 'о', 'н']))
-
-
-# lst_1 = [1, 2, 3]
-# lst_2 = [9, 12, 33, 54, 105]
-# lst_3 = ["c", "л", "о", "н"]
 #
+# lst_1 = [1,2,3]
+# lst_2 = [9,12,33,54,105]
+# lst_3 = ["c","л","о","н"]
 #
 # def change(lst):
 #     res = []
 #     for i in range(len(lst)):
 #         if i == 0:
 #             res.append(lst[-1])
-#         elif i == len(lst) - 1:
+#         elif i == len(lst)-1:
 #             res.append(lst[0])
 #         else:
 #             res.append(lst[i])
 #     return res
-#
 #
 # print("Результат:")
 # print(change(lst_1))
@@ -1265,8 +1264,8 @@
 #     has_lower = False
 #     has_num = False
 #
-#     for ch in password:  # '1'
-#         if "A" <= ch <= "Z":  # 65 <= 68 <= 90
+#     for ch in password:   # '1'
+#         if "A" <= ch <= "Z":  # 65 <=  97 <=90
 #             has_upper = True
 #         if "a" <= ch <= "z":
 #             has_lower = True
@@ -1280,60 +1279,61 @@
 #
 # p = input("Введите пароль: ")
 # if check_password(p):
-#     print("Это надежный пароль")
+#     print("Это надёжный пароль")
 # else:
-#     print("Это ненадежный пароль")
+#     print("Это ненадёжный пароль")
+
 
 # def get_sum(a, b, c=0, d=1):
 #     return a + b + c + d
-
-
+#
+#
 # print(get_sum(1, 5, 2, 7))
-# print(get_sum(1, 5, 2))  # 9
-# print(get_sum(1, 5))
+# print(get_sum(1, 5, 2))
 # print(get_sum(1, 5, d=2))  # 8
 
-
 # def set_param(c=20, s="-"):
-#     print(s * c)  # "-" * 20
-#
-#
+#     print(s * c)
+# #
 # set_param()
 # set_param(7)
-# a = "#"
-# set_param(s=a)
+# s = "#"
+# # set_param(s="#")
+# set_param(s=s)
+# # set_param(20, s="#")
+
 
 # def digit_sum(n, even=True):  # 9874023
 #     s = 0
 #     while n > 0:
-#         cur_digit = n % 10
+#         cur_digit = n % 10  # Последня цифра
 #         if even and cur_digit % 2 == 0:
 #             s += cur_digit
-#         elif not even and cur_digit % 2:
+#         if not even and cur_digit % 2 != 0:
 #             s += cur_digit
-#         n //= 10
+#         n //= 10  # Уменьшение на 10
 #     return s
 #
 #
-# print("Сумма четных цифр:")
+# print("Сумма четных цифр: ")
 # print(digit_sum(9874023))
 # print(digit_sum(38271))
 # print(digit_sum(123456789))
 #
-# print("Сумма нечетных цифр:")
+# print("Сумма нечетных цифр: ")
 # print(digit_sum(9874023, even=False))
 # print(digit_sum(38271, even=False))
 # print(digit_sum(123456789, even=False))
 
 
-# def display_info(name, age, nm):
-#     print("Name:", name, "\nAge:", age)
+# def display_info(name, age,):
+#     print("Name: ", name, "\nAge", age)
 #
 #
-# # display_info("Ira", 23)
-# # display_info(23, "Ira")
-# # display_info(age=23, name="Ira")
-# display_info(nm="Igor", age=23, name="Ira")
+# display_info("Tra", 23)
+# display_info(23, "Ira")
+# display_info(age=23, name="Ira")
+# display_info("Igor", age=23, name="Ira")
 
 # a = "Hello"
 # b = "Hello"
@@ -1341,8 +1341,7 @@
 # print(a, id(a))
 # print(b, id(b))
 # print(a == b)  # True
-# print(a is b)  # True
-#
+# print(a is b)  # True  , одна и таже область памяти
 # lst1 = [1, 2, 3]
 # lst2 = [1, 2, 3]
 # print(lst1, id(lst1))
@@ -1350,23 +1349,24 @@
 # print(lst1 == lst2)  # True
 # print(lst1 is lst2)  # False
 
+# Изменяемые типы данных  - list [],
+# Неизменяемые типы данных - int, float, bool, str
 
-# Изменяемые объекты - list,
-# Неизменяемые объекты - int, float, bool, str, tuple
 
-# lst1 = [1, 2, 3]
+#
+# lst1=[1, 2 , 3]
 # print(lst1, id(lst1))
 # lst1.append(4)
 # print(lst1, id(lst1))
 
-# Кортежи (tuple)
+#    КОРТЕЖИ!!!!!!!!!!!!!!!!!! КОРТЕЖИ!!!!!!!!!КОРТЖИ!!!!!!!!!!!!
 
 # lst = [10, 20, 30]
 # tpl = (10, 20, 30)
 # print(lst.__sizeof__())
 # print(tpl.__sizeof__())
 
-# a = ("red", "blue", "green")
+# a = "red", "blue", "green"
 # print(a)
 # print(type(a))
 
@@ -1384,37 +1384,36 @@
 # print(a)
 
 
-# figure = input("1 - , 2 - , 3 - : ")
+# figure = input("1 -, 2 -,3-:")
 # if figure == "1":
 #     rectangle()
 # elif figure == "2":
-#     triangle()
+#     triagle()
 # else:
 #     print("")
 
-# from random import randint
-#
-# # s = tuple(i for i in range(5))
-# # s = tuple(input("-> ") for i in range(5))
+from random import randint
+
+# s = tuple(i for i in range(5))
+# s = tuple(input("->") for i in range(5))
 # s = tuple(randint(20, 40) for i in range(5))
 # print(s)
 #
-#
-# res = tuple(2 ** i for i in range(1, 13))
+# res = tuple(2**i for i in range(1,13))
 # print(res)
 
 # t1 = tuple("hello")
 # t2 = tuple("world")
 # t3 = t1 + t2
 # print(t3)
-# # print(t3.count('l'))
 # # print(t3.count('a'))
-# # # print(t3.index('l', 4))
+# # print(t3.index('l', 4) )
 # # ch = "w"
 # # try:
-# #     print(t3.index(ch))
+# #     print(t3.index(ch) )
 # # except ValueError:
 # #     print("Такого символа в кортеже не существует")
+#
 # for i in t3:
 #     print(i, end=" ")
 
@@ -1422,12 +1421,16 @@
 # def slicer(tpl, el):
 #     if el in tpl:
 #         if tpl.count(el) > 1:
-#             # first = tpl.index(el)  # 1
-#             # second = tpl.index(el, first + 1) + 1  # 4 + 1
-#             # return tpl[first:second]  # [1:5]
-#             return tpl[tpl.index(el):tpl.index(el, tpl.index(el) + 1) + 1]
+#
+#             # first = tpl.index(el)  #1
+#             # second = tpl.index(el, first + 1)+1    #4
+#             # return tpl[first:second]   #[1:5]
+#             return tpl[tpl.index(el):tpl.index(el, tpl.index(el) + 1) + 1]  # В одной строке
 #         else:
+#             a = tpl.index(el)
 #             return tpl[tpl.index(el):]
+#
+#
 #     else:
 #         return tuple()
 #
@@ -1436,26 +1439,24 @@
 # print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
 # print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
 
+
 # from random import randint
 #
-#
-# def ran(a, b):
+# def run(a, b):
 #     return tuple(randint(a, b) for i in range(10))
-#
 #
 # def foo(a, b):
 #     res = a + b
 #     c = res.count(0)
 #     return res, c
 #
-#
-# tpl1 = ran(0, 5)
+# tpl1 = run(0, 5)
+# tpl2 = run(-5, 0)
 # print(tpl1)
-# tpl2 = ran(-5, 0)
 # print(tpl2)
 # print(foo(tpl1, tpl2))
 
-# t = (10, 11, (1, 2, 3), [4, 5, 6], ['hello', 'world'])
+# t = (10, 11, [1, 2, 3, ], [4, 5, 6], ['hello', 'world'])
 # print(t, id(t))
 # t[4][0] = "new"
 # t[4].append('hi')
@@ -1475,11 +1476,11 @@
 #     return name, age, is_married
 #
 #
-# # user = get_user()  # ('Tom', 22, False)
+# # user = get_user()  # Возвращается вместо вызова функци   ('Tom', 22, False)
 # # first_name, year, married = user
-# first_name, year, married = get_user()
+# first_name, year, married= get_user()
 # print(first_name, year, married)
-# print(user[0])
+# # print(user[0])
 # print(user[1])
 # print(user[2])
 
@@ -1487,13 +1488,14 @@
 #     return sum(lst), len(lst)
 #
 #
-# a, b = func([2, 9, 6, 5, 8, 7, 5, 8, 7, 1, 4, 5, 4])
-# print("Сумма:", a)
-# print("Количество:", b)
+# a, b = (func([2, 9, 6, 5, 8, 75, 5, 5, 5, 6, 5, 4, 5, 8, 7]))
+# print("Сумма", a)
+# print("Колличество", b)
 #
-# for i in "red":
+# # for i in 1, 2, 5, 4, 5, 6, 9:
+# for i in "red", "blue", "green":
 #     print(i)
-
+#
 # lst = [1, 2, 3, 4, 5]
 # print(lst)
 # tpl = tuple(lst)
@@ -1502,21 +1504,20 @@
 # print(lst1)
 
 # countries = (
-#     ("Германия", 80.2, (("Берлин", 3.326), ("Гамбург", 1.718))),
+#     ("Германия", 80.2, (("Берлин", 3.326), ("Гамбург", 1.728))),
 #     ("Франция", 66, (("Париж", 2.2), ("Марсель", 1.6)))
 # )
 # print(countries)
 #
 # for country in countries:
 #     country_name, country_population, cities = country
-#     print("\nСтрана: ", country_name, ", население = ", country_population, sep="")
+#     print("\nСтрана:", country_name, " ,население: ", country_population, cities, sep="")
 #     for city in cities:
 #         city_name, city_population = city
-#         print("\tГород: ", city_name, ", население = ", city_population, sep="")
+#         print("\tГород: ", city_name, city_population, sep="")
 
-# Множество (set) - неупорядоченная коллекция, которая содержит только уникальные элементы
-
-# s = {'banana', 'apple', 'orange', 'banana', 'apple'}
+# МНОЖЕСТВО!!!!!!!!!!!!!!!!МНОЖЕСТВО!!!!!!!!!!!!!!МНЛЖЕСТВО SET!!!!!!!!!SET!!!!!!!!!!!!!SET
+# s= {'banana', 'apple', 'orange', 'banana', 'apple'}
 # print(s)
 # print(len(s))
 # print(type(s))
@@ -1534,7 +1535,7 @@
 # print(type(a))
 # print(a)
 
-# s = {input("-> ") for i in range(5)}
+# s = {input("->") * i for i in range(15)}
 # print(s)
 
 # a = set("Hello")
@@ -1543,9 +1544,9 @@
 # # print('a' in a)
 # a.add("a")
 # print(a)
-# el = "e"
+# el = "e1"
 # if el in a:
-#     a.remove(el)  # KeyError
+#     a.remove(el)  # KeyError   -ошибка ключа
 # print(a)
 # a.discard("o")
 # print(a)
@@ -1553,164 +1554,7 @@
 # print(a)
 # a.clear()
 # print(a)
-
-
+#
 # print("Hello")
 
-# print("Данные для добавления на GitHub")
-
-# print("Изменения внесенные на другой машине")
-
-# s = ['ab_1', 'ac_2', 'bc_1', 'bc_2']
-# # a = [x for x in s if 'a' not in x]
-# # a = ['A' + x[1:] if x[0] == 'a' else 'B' + x[1:] for x in s]
-# a = ['A' + x[1:] if x[0] == 'a' else 'B' + x[1:] for x in s if x[1] == 'c']
-# print(a)
-# print(['A' + x[1:] if x[0] == 'a' else 'B' + x[1:] for x in ['ab_1', 'ac_2', 'bc_1', 'bc_2'] if x[1] == 'c'])
-# # тернарное выражение  q = True if условие else False
-# lst = []
-# for x in ['ab_1', 'ac_2', 'bc_1', 'bc_2']:
-#     if x[1] == 'c':
-#         if x[0] == 'a':
-#             lst.append('A' + x[1:])
-#         else:
-#             lst.append('B' + x[1:])
-# print(lst)
-
-# a = {0, 1, 2, 3}
-# b = {4, 3, 2, 1}
-# c = a | b  # {0, 1, 2, 3, 4}
-# # c = a & b  # {1, 2, 3}
-# # c = a - b  # {0}
-# # c = a ^ b  # {0, 4}
-# # c = a.union(b)
-# print(c)
-# # a |= b
-# # a &= b
-# # a -= b
-# a ^= b
-# print(a)
-
-# c = a + b
-# a += b  => a = a + b
-
-# s1 = {1, 2}
-# s2 = {3}
-# s3 = {4, 5}
-# s4 = {3, 2, 6}
-# s5 = {6}
-# s6 = {7, 8}
-# s7 = {9, 8}
-# # s = s1.union(s2, s3, s4, s5, s6, s7)
-# s = s1 | s2 | s3 | s4 | s5 | s6 | s7
-# print(s)
-# print(len(s))
-# print(min(s))
-# print(max(s))
-
-# s1 = "Hello"
-# s2 = "How are you"
-# s = set(s1) & set(s2)
-# print(s)
-# for i in s:
-#     print(i, end=" ")
-
-# s1 = "Python"
-# s2 = "Programming language"
-# s = set(s1) - set(s2)
-# print(s)
-# for i in s:
-#     print(i, end=" ")
-
-# drawing = {'Марина', 'Женя', 'Света'}
-# music = {'Костя', 'Женя', 'Илья'}
-# one_hobby = drawing ^ music
-# print(one_hobby)
-# both_hobby = drawing & music
-# print(both_hobby)
-#
-# drawing = drawing - both_hobby
-# print(drawing)
-
-
-# a = {0, 1, 2, 3, 4}
-# b = {3, 2, 1}
-# print(a < b)
-
-# frozenset
-# s = frozenset([1, 2, 3, 4, 5, 6])
-# s = frozenset("Hello")
-# print(s)
-
-# Словари (dict)
-
-# s = [1, 2, 3]
-# d = {"one": 1, "two": 2, "three": 3}
-# print(s[1])
-# print(d["two"])
-#
-# s1 = ["one", "two", "three"]
-# d1 = {1: "one", 2: "two", 3: "three"}
-# print(s1[1])
-# print(d1[2])
-
-
-# set() == {}
-# d = {False: "test", 1: 45, (1, 2.3): "Кортеж", True: 1, 35: [2, 3, 6, 7], 0: "один", 54: {1: 2}}
-# print(d)
-# d[(1, 2.3)] = 100
-# print(d)
-
-# d = {'one': 1, 'two': 2}
-# print(d)
-# print(type(d))
-
-#
-# d1 = dict(one='one', two=2)
-# print(d1)
-# print(type(d1))
-
-# d1 = dict(["one", 1, "two", 2])
-# d1 = dict([("one", 1), ("two", 2)])
-# d1 = dict(["on", ("two", 2)])
-# print(d1)
-
-# d = {x: x ** 2 for x in range(7)}
-# print(d)
-
-
-# d = {"one": 1, "two": 2, "three": 3}
-# print(d)
-# # print("four" in d)
-# # print(len(d))
-# # for key in d:
-# #     print(key, "->", d[key])
-# key = "four"  # "four"
-# del d[key]
-# # if key in d:
-# #     print(d[key])
-# # try:
-# #     print(d[key])
-# # except KeyError:
-# #     print("Такого ключа не существует")
-# print(d)
-
-# d = {'x1': 3, 'x2': 7, 'x3': 5, 'x4': -1}
-# res = 1
-# for x in d:
-#     res *= d[x]
-# print(res)
-
-# d = dict()
-# d[1] = input("-> ")
-# d[2] = input("-> ")
-# d[3] = input("-> ")
-# d[4] = input("-> ")
-# d = {x: input("-> ") for x in range(1, 5)}
-# print(d)
-# try:
-#     dislike = int(input("Какой элемент исключить: "))
-#     del d[dislike]
-# except (KeyError, ValueError):
-#     print("Такого элемента не существует не существует")
-# print(d)
+print("Изменения внесённые на другой машине")
