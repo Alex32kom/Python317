@@ -1714,3 +1714,390 @@
 # except (KeyError, ValueError):
 #     print("Такого элемента не существует не существует")
 # print(d)
+#
+# d = {'x1': 3, 'x2': 7, 'x3': 5, 'x4': -1}
+# print(len(d))
+#
+# goods = {
+#     "1": ['Core-i3-4300', 9, 4500],
+#     "2": ['Core-i5-4300', 3, 8500],
+#     "3": ['AMD FX-6300', 6, 3700],
+#     "4": ['Pentium G3220', 8, 2100],
+#     "5": ['Core i5-3450', 5, 6400],
+#
+# }
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], "шт, по ", goods[key][2], "руб", sep="")
+#
+# while True:
+#     n = input("№: ")
+#     if n != "0":
+#         if n in goods:
+#             try:
+#                 count = int(input("кол-во: "))
+#                 goods[n][1] += count
+#             except ValueError:
+#                 print("Значение не корректно, Введите число")
+#         else:
+#             print("Такого ключа не существует")
+#     else:
+#         break
+#
+#
+#
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], "шт, по ", goods[key][2], "руб", sep="")
+
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d)
+# # del d['x1']
+# # d['x4'] = 10
+# # print(d)
+#
+# print(d.values())
+# print(d.keys())
+# print(d.items())
+# # for key, value in d.items():   #РАспаковка списка
+# #     print(key, "->", value)
+# print(list(d))
+# print(list(d.values()))   #РАспаковывает ключи
+# print(list(d.items()))  # Распаковывает ключи и значение ( их список кортежей)
+
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+#
+# d2 = d.copy()
+# print("d =", d)
+# print("d2 =", d)
+# d2["x4"] = 10
+# d['x1'] = 100
+# print("d = ", d)
+# print("d2 = ", d2)
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d)
+# value = d.get("x1", "Такого ключа не существует")
+# print(value)
+# item = d.pop("x4", "Такого ключа не существует")
+# print(item)
+# print(d)
+# item2 = d.popitem()
+# print(d)
+#
+# d.clear()
+# print(d)
+
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d)
+# # item = d.setdefault("x4", 10)
+# # print(item)
+# # print(d)
+# a = {"one": 1, "two": 2}
+# d.update(a)
+# a = tuple(a.items())
+# a = [('one: 1'), ('two', 2), ('x1', 10)]
+# print(d)
+# d.update(a)
+# print(d)
+
+# x = {'a:': 1, 'b': 2}
+# y = {'b:': 3, 'c': 4}
+# z = x | y
+# z = x.copy()
+# z.update(y)
+# print(z)
+
+
+# d = dict.fromkeys(['a', 'b', 'c'], 100)
+# print(d)
+
+# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d2 = dict()
+# d2['name'] = d.pop("name")
+# d2['salary'] = d.pop("salary")
+# print(d)
+# print(d2)
+
+# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d['location'] = d.pop('city')
+# print(d)
+
+# d = {
+#     'first': {
+#         1: {
+#             11: "abc",
+#             12: "abc",
+#             113: "abc",
+#         },
+#         2: {
+#             11: "abc"
+#         },
+#         3: {
+#             11: "abc"
+#         }
+#     },
+#     'second': {
+#         4: {
+#             11: "abc"
+#         },
+#         5:  {
+#             11: "abc"
+#         }
+#     }
+# }
+# print(d)
+# for x in d:
+#     print(x)
+#     for y in d[x]:
+#         print("\t", y)
+#         for z in d[x][y]:
+#             print("\t\t", z, ":", d[x][y][z])
+
+#
+# d = {'один': 1, 'два': 2, 'три': 3, 'четыре': 4}
+# d2 = {key: value for key, value in d.items() if value <= 2}
+# print(d2)
+
+
+# a = ['one', 1, 2, 3, 'two', 10, 20, 'three', 15, 36, 60, 'four', -20]
+#
+# d = dict()
+# s = None
+# for i in a:
+#     if type(i) == str:
+#         d[i] = []
+#         s = i  # s = 'one'
+#     else:
+#         d[s].append(i)
+#
+# print(d)
+
+# sales =
+# {'John': {'N': 3056,'S': 8463,'E': 8441,'W': 2694},
+#  'Tom': {'N': 4832,'S': 6786,'E': 4737,'W': 3612},
+#  'Anne': {'N': 5239,'S': 4802,'E': 5820,'W': 1859},
+#  'Fiona': {'N': 3904,'S': 3645,'E': 8821,'W': 2451}
+#  }
+
+
+# sales = {'John': {'N': 3056, 'S': 8463, 'E': 8441, 'W': 2694},
+#          'Tom': {'N': 4832, 'S': 6786, 'E': 4737, 'W': 3612},
+#          'Anne': {'N': 5239, 'S': 4802, 'E': 5820, 'W': 1859},
+#          'Fiona': {'N': 3904, 'S': 3645, 'E': 8821, 'W': 2451}}
+#
+#
+# for x in sales:
+#     print(x)
+#     for y in sales[x]:
+#         print("\t",  y, ":", sales[x][y])
+#
+# person = input("Имя: ")
+# region = input("Регион: ")
+# print(sales[person][region])
+# new_data = int(input("Новое значение: "))
+# sales[person][region] = new_data
+# print(sales[person])
+
+
+# zip()
+
+
+# one = [1, 2, 3, 4, 5]
+# two = ["one", "two", "three", ]
+# three = [2.5, 4.6, 8.9]
+#
+# d = dict(zip(one, two, ))
+# print(d)
+#
+# lst = list(zip(one, two, three))
+# print(lst)
+
+# f = {k: v for k, v in zip(one, two)}
+# print(f)
+
+
+# one = {"name": "Igor", "surname": "Doe", "job": "Consultant"}
+# two = {"name": "Irina", "surname": "Smith", "job": "Manager"}
+# three = {"name": "Irina", "surname": "Smith", "job": "Manager"}
+#
+# for (k1, v1), (k2, v2), (k3,v3) in zip(one.items(), two.items(), three.items()):
+#     print(k1, "->", v1)
+#     print(k2, "->", v2)
+#     print(k3, "->", v3)
+
+# lst = [(1, 'one'), (2, 'two'), (3, 'three')]
+# a, b = zip(*lst)
+# print(a)
+# print(b)
+
+
+# a = {"one": 1, "two": 2, }
+# b = {"three": 3, "for": 4}
+# print({**a, **b})
+#
+# for k, v, in {**a, **b}.items():
+#     print(k,"->", v)
+
+
+# data = [5, 7, 9, 4, 1, 3, 5, 8, 6, 4]
+# data = ["red", "green", "blue"]
+#
+# for j, i in enumerate(data, 1):
+#     print(j, ")", i, sep="")
+
+# j = 0
+# for i in data:
+#     print(j, ") ", i, sep="")
+#     j += 1
+
+# a = [1, 2, 3]
+# b = [*a, 4, 5, 6]
+# print(b)
+
+# def func(*args):
+#     # print(*args)
+#     return args
+#
+#
+# print(func(5))
+# print(func(5, 6, 7, "abc"))
+# print(func())
+
+# def summa(*args):
+#     res = 0
+#     for i in args:
+#         res += i
+#     return res
+#
+#
+# print(summa(1, 4, 7, 8, 5, 7, 5, 5, 4))
+# print(summa(1, 4, 7, 8, 5, 7))
+# print(summa(1, 4, 7, 8))
+
+
+# def to_dict(*di):
+#     # dictionary = {}
+#     # for i in di:
+#     #     dictionary.update({i: i})
+#     #
+#     # return dictionary
+#
+#
+# # def di(*di):
+# #     return dict(zip(di,di))
+#
+#     return {i:i for i in di}
+#
+#
+# print(to_dict(1, 2, 3, 4))
+# print(to_dict("grey", (2, 17), 3.11, -4))
+
+# def ch(*args):
+#     average = sum(args)/len(args)
+#     print(average)
+#     res=[]
+#     for num in args:
+#         if average > num:
+#             res.append(num)
+#     return res
+#
+#
+# print(ch(1, 2, 3, 4, 5, 6, 7, 8, 9))
+# print(ch(3, 6, 1, 9, 5))
+
+
+# def func(a, *args):
+#     return a, args
+#
+#
+# print(func(5))
+# print(func(5,9,8,7,6))
+
+# def print_scores(student, *scores):
+#     print("Name: ", student)
+#     for score in scores:
+#         print(score, end="")
+#     print()
+#
+#
+# print_scores("Roman", 5, 4, 3, 5, 4, 5, 5)
+# print_scores("Nikita", 5, 4, 3, 5)
+
+#
+# def func(**kwargs):
+#     return kwargs
+#
+#
+# print(func(a=1, b=2, c=3))
+# print(func())
+# print(func(name="Python"))
+
+# def intro(**kwargs):
+#     for k, v in kwargs.items():
+#         print(k, "is", v)
+#     print()
+#
+#
+# intro(name="Irina", surname="Sharma", age=22)
+# intro(name="Igor", surname="Wood", email="igor@mail.com", age=22, phone=676847654687)
+
+
+# def func(a, b, *args, dd=5, cc= 7, **kwargs):
+#     return a, b, args, kwargs, dd, cc
+#
+#
+# print(func(1, 2, 3, 4, 5, aa=1, bb=2, cc=3))
+
+# def db(**kwargs):
+#     my_dict.update(**kwargs)
+#
+#
+# my_dict = {"one": "first"}
+# db(k1=22, k2=31, k3=11, k4=91)
+# db(name="Bob", age=31, weight=61, eyes_color="grey")
+# print(my_dict)
+
+# name = "Tom"
+# surname = ""
+
+
+# def hi():
+#     global name, surname
+#     name = "Sam"  # Локальная перменная у неё Выше приоритет
+#     surname = "Johnson"
+#     print("Hello", name, surname)
+#
+#
+# def bye():
+#     print("Good bye", name)
+#
+#
+# print(name)
+# hi()
+# bye()
+# print(name)
+# print(surname)
+
+#
+# i = 5
+#
+#
+# def func(arg=i):
+#     print(arg)
+#
+#
+# i = 6
+
+def func(a):
+    x = 2
+
+    def inner():
+        print("x:", x)
+        return a + x
+
+    return inner()
+
+print(func(3))
+
