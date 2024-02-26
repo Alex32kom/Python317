@@ -2553,24 +2553,470 @@
 # test()
 
 
-def my_decorator(func):  # декорирующая функция
-    def inner():
-        print('Code before', "*" * 50)
-        func()
-        print('Code after', "_" * 50)
-
-    return inner
-
-
-@my_decorator  # Декоратор
-def func_test():  # Декорируемая функция
-    print('Hello, I am func "Func_test"')
-
-@my_decorator
-def hello():
-    print( 'Hello, I am func "Hello"')
-
-func_test()
-hello()
+# def my_decorator(func):  # декорирующая функция
+#     def inner():
+#         print('Code before', "*" * 50)
+#         func()
+#         print('Code after', "_" * 50)
+#
+#     return inner
+#
+#
+# @my_decorator  # Декоратор
+# def func_test():  # Декорируемая функция
+#     print('Hello, I am func "Func_test"')
+#
+# @my_decorator
+# def hello():
+#     print( 'Hello, I am func "Hello"')
+#
+# func_test()
+# hello()
 
 ######################## 19.02. 24 год Декораторы!!!
+
+
+# def bold(fn):
+#     def wrap():
+#         return "<b>" + fn() + "</b>"
+#
+#     return wrap
+#
+#
+# def italic(fn):
+#     def wrap():
+#         return "<i>" + fn() + "</i>"
+#
+#     return wrap
+#
+#
+# @bold
+# @italic
+# def hello():
+#     return "text"
+#
+#
+# print(hello())
+
+# def cnt(fn):
+#     count = 0
+#
+#     def wrap():
+#         nonlocal count
+#         count += 1
+#         fn()
+#         print("Вызов функции: ", count)
+#
+#     return wrap
+#
+#
+# @cnt
+# def hello():
+#     print("Hello")
+#
+#
+# hello()
+# hello()
+# hello()
+
+# def args_decorator(fn):
+#     def wrap(arg1, arg2):
+#         print("Данные", arg1, arg2)
+#         fn(arg1, arg2)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def print_full_name(first, last):
+#     print("Меня зовут", first, last)
+#
+#
+# print_full_name("Ирина", "Мумладзе")
+
+#
+# def args_decorator(fn):
+#     def wrap(*args, **kwargs):
+#         print("args", args)
+#         print("kwargs", kwargs)
+#         fn(*args, **kwargs)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def func(a, b, c, study="Python"):
+#     print(a, b, c, "Изучают", study, end="\n\n")
+#
+# @args_decorator
+# def func1(study):
+#     print("Мне нравится", study)
+#
+#
+# func("Борис", "Елизавета", "Светлана", study="JavaScript")
+# func("Владимир", "Екатерина", "Виктор")
+# func1(study="HTML")
+
+
+# def decor(fn):
+#      def wrap(x, y):
+#             print("сумма", x, "и", y, "=", end=" ")
+#             fn(x,y)
+#
+#      return wrap
+#
+# @decor
+# def summa(a, b):
+#     print(a + b)
+#
+# @decor
+# def sub(a, b):
+#     print(a - b)
+#
+#
+#
+# summa(5, 2)
+# sub(5,2)
+
+
+# def decor_args(arg1, arg2):
+#     def decor(fn):
+#         def wrap(x, y):
+#             print(arg1, x, arg2, y, "=", end=" ")
+#             fn(x, y)
+#         return wrap
+#     return decor
+#
+# @decor_args("Сумма:", "+")
+# def summa(a, b):
+#     print(a + b)
+#
+# @decor_args("Разность:", "-")
+# def sub(a, b):
+#     print(a - b)
+#
+# summa(5, 2)
+# sub(5, 2)
+
+
+# def decor_args(arg1):
+#     def decor(fn):
+#         def wrap(x):
+#             return arg1 * fn(x)  # 3 * 5
+#
+#         return wrap
+#
+#     return decor
+#
+#
+# @decor_args(3)
+# def return_num(num):
+#     return num
+#
+#
+# print(return_num(5))
+
+# Строки                        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# print(int("19"))
+# print(int("19.5"))
+# print(int(19.5))
+
+# print(int("100", 2))
+# print(int("100", 8))
+# print(int("100", 10))
+# print(int("100", 16))
+
+
+# print(bin(18))  # 0b10010 - двоичная
+# print(oct(18))  # 0o22 - восьмеричная
+# print(hex(18))  # 0x12 - шестнадцатеричная
+#
+# print(0b10010)
+# print(0o22)
+# print(0x12)
+# print(0b10010 + 0x12)
+
+
+# q = 'Pyt'
+# w = "hon"
+# e = q + w
+# print(e)
+# print(e * 2)
+# print("y1" in e)
+# print(e[0])
+# print(e[1:3])
+
+# s = "Python"  # Pytton
+# # s[3] = "t"
+# s = s[:3] + 't' + s[4:]
+# print(s)
+
+# def change_char_to_str(s, old, new):
+#     s2 = ""
+#     i = 0
+#
+#     while i < len(s):
+#         if s[i] == old:
+#             s2 = s2 + new
+#         else:
+#             s2 = s2 + s[i]
+#         i += 1
+#
+#     return s2
+#
+#
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+# str2 = change_char_to_str(str1, "N", "P")
+# print("str1 =", str1)
+# print("str2 =", str2)
+
+# print("Привет")
+# print(u"Привет")
+
+# print("C:\\folder\\fil\nes.txt\\")
+# print(r"C:\folder\files\\"[:-1])
+# print(r"C:\folder\files" + "\\")
+
+# name = "Дмитрий"
+# age = 25
+# print("Меня зовут " + name + ". Мне " + str(age) + " лет.")
+# print(f"Меня зовут {name}. Мне {age} лет.")
+
+# ch = 5.26987412
+#
+# print(f"Число: {round(ch, 3)}")
+# print(f"Число: {ch:.3f}")
+
+# x = 10
+# y = 5
+# print(f"{x = }, {y = }")
+# print(f"{x} x {y} / 2 = {x * y / 2}")
+
+# num = 74
+#
+# print(f"{{{{{num}}}}}")
+#
+# print("C:\\\\text")
+#
+# dir_name = 'my_doc'
+# file_name = "data.txt"
+# print(fr"home\{dir_name}\{file_name}")
+# print("home\\" + dir_name + "\\" + file_name)
+
+
+#                 21.02. 2024  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+###########@##################################@@@@@###############################@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# def avg(fn):
+#     def wrap(*arg):
+#         a = ""
+#         for i in arg:
+#             a += str(i) + ","
+#         print("Среднее арифметическое:", a[:-2],"=", fn(*arg) / len(arg))
+#
+#     return wrap
+#
+#
+# @avg
+# def summa(*args):
+#     print("Сумма чисел: ", *args, "=", sum(args))
+#     return sum(args)
+#
+#
+# summa(2, 3, 3, 4)
+###########@##################################@@@@@###############################@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+# s = """
+# Несколько
+# строк
+# """
+# print(s)
+#
+# s1 = '''
+# НЕсколько
+# строк
+# '''
+# print(s1)
+#
+# s2 = ("Нксколько\
+#     строк")
+# print(s2)
+
+
+# def square(n):
+#     """Принимает число n, возвращает квадрат числа n."""
+#     return n ** 2
+#
+#
+# print(square(5))
+# print(square.__doc__)
+#
+# # max(5, 5)
+# # len()
+# print(len.__doc__)
+
+# from math import pi
+#
+#
+# def cylinder(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#
+#     Вычисляет площадь цилиндра на основании заданной высоты и радиуса основания
+#     :param r: положительное число, радиус основания цилиндра
+#     :param h: положительное число высота цилиндра
+#     :return: положительное число, площадь цилиндра
+#     """
+#     return 2 * pi * r * (r + h)
+#
+#
+# print(cylinder(2, 4))
+# print(cylinder.__doc__)
+# print(max.__doc__)
+# print(list.__doc__)
+# print(dict.__doc__)
+
+
+# print(ord('a'))
+# print(ord('#'))
+# print(ord('й'))
+
+# while True:
+#     n = input("->")
+#     if n != "-1":
+#         print(ord(n))
+#     else:
+#         break
+
+
+# s = "Test string for me"
+# arr = [ord(x) for x in s]
+# print("ASCII коды: ", arr)
+# arr = [int(sum(arr) / len(arr))] + arr
+# print("Среднее арифметическое:", arr)
+# arr += [ord(x) for x in input("->")[:3] if x not in arr]
+# print(arr)
+# print(arr.count(arr[-1]) - 1)
+# arr.sort(reverse=True)
+# print(arr)
+#
+# print(chr(97))
+# print(chr(8364))
+
+#
+# a = 122
+# b = 97
+#
+# if a < b:
+#     a, b = b, a
+#
+# for i in range(b, a + 1):
+#     print(chr(i), end="")
+
+#
+# print("apple"=="Apple")
+# print("apple">"Apple")
+
+
+# from random import randint
+#
+# shortest = 7
+# longest = 16
+# min_ascii = 33
+# max_ascii = 126
+#
+#
+# def random_password():
+#     res = ""
+#     for i in range(randint(shortest, longest)):  # range(10)
+#         rand_char = chr(randint(min_ascii, max_ascii))
+#         res += rand_char
+#     return res
+#
+#
+# print("Ваш случайный пароль:", random_password())
+
+
+# s = "hello, WORLD! I am learning Python."
+# # print(s.capitalize())  # Hello, world! i am learning python.
+# # print(s.lower())  # hello, world! i am learning python.
+# # print(s.upper())  # HELLO, WORLD! I AM LEARNING PYTHON.
+# # # print(s.swapcase())  # HELLO, world! i AM LEARNING pYTHON.
+# # # print(s.title())  # Hello, World! I Am Learning Python.
+# # print(s)
+#
+# # print(s.count("l"))
+# # print(s.count("l", 3))
+# # print(s.count("l", 3, 10))
+#
+# # print(s.find("Python1"))  # возвращает индекс первого вхождения подстроки в строку, если такой подстроки нет
+# # # возвращает "-1"
+# # # print(s.find("l", 4, 20))
+# # print(s.find("l"))
+# # print(s.rfind("l"))
+# #
+# # print(s.index("l"))  # ValueError
+# # print(s.rindex("l"))
+#
+#
+# # st = input("Введите два слова через пробел: ")
+# # first = st[:st.find(" ")]
+# # second = st[st.find(" ") + 1:]
+# # print(second + " " + first)
+# print(s.startswith("I am", 14))
+# print(s.index("I am"))
+# print(s.endswith("on."))
+
+
+# print(int("789"))
+
+# print('123'.isdigit())  # только числа
+# print('qЙwee'.isalpha())  # только буквы
+#
+# print('Abc123'.isalnum())  # только буквы или цифры
+#
+# print('aИc0123"№'.islower())  # только нижний регистр
+# print('ASD0123"№'.isupper())  # только верхний регистр
+
+# n = input("Введите число: ")
+# if n.isdigit():
+#     n = int(n)
+#     print(n * 2)
+
+
+# print('py'.center(10))
+# print(' py '.center(11, "-"))
+
+
+# print('    py    '.lstrip())
+# print('    py    '.rstrip())
+# print('    p y    '.strip())
+#
+# print('https://www.pythons.org'.strip('/:pths.org'))
+# print('https://www.pythons.org'.lstrip('/:pths').rstrip('.org'))
+
+
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования. New"
+# print(str1.replace("Nython", "Python"))
+# print(str1.replace("N", "P"))
+
+
+# s = "-"
+# seq = ("a", "b", "c")
+# print(s.join(seq))
+#
+# print("..".join(['1', '99']))
+#
+# print(", ".join("Hello"))
+
+# print("Строка разделенная пробелами".split())  # ['Строка', 'разделенная', 'пробелами']
+# print('www.python.org.ru'.split(".", 2))
+# print('www.python.org.ru'.rsplit(".", 2))
+
+# a = input("-> ").split()
+# b = list(map(int, a))
+# print(b)
+
+
+#####################                26.02.2024
