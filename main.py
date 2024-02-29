@@ -3020,3 +3020,172 @@
 
 
 #####################                26.02.2024
+
+
+# fio = input("Введите ФИО: ->").split()
+# print(fio)
+# print(f"{fio[0]} {fio[1][0]} {fio[2][0]}.")
+
+
+##### Регулярные Выражения
+
+import re
+
+# s = "Я ищу совпадение в 2024 году. ^ И я их найду в 2 счёта. 98673 Hello"
+# reg ="[21][0-9][0-9][0-9]"           #"[А-яа-яЁё]"
+# reg ="[А-яа-яЁё]"           #"[А-яа-яЁё]"
+# reg ="[A-Za-z]"           #"[А-яа-яЁё]"
+
+# print(re.findall(reg, s))  # возвращает список содержащий все совпадения
+# print(re.search(reg, s))  # месторасположнения первого совпадения с обьектом
+# print(re.search(reg, s).span())
+# print(re.search(reg, s).start())
+# print(re.search(reg, s).end())
+# print(re.search(reg, s).group())
+#
+# print(re.match(reg, s))  # поиск совпадения с шаблоном вначале строки
+#
+# print(re.split(reg, s, 1))  # возвращает список в котором строка разбита по шаблону
+#
+# print(re.sub(reg, "!", s))
+
+# s = "Я ищу совпадение в 2024 году. ^ И я их найду в 2 счёта. 98673 Hello"
+# # reg=r"\."
+# # reg = r"[A-Za-z]"
+# # reg = r"[^0-9]"
+# reg = r"[^А-яа-яЁё]"
+# print(re.findall(reg, s))
+
+# print(ord('Я'))
+# print(ord('а'))
+
+#
+# st = "Час в 24 формате от 00 до 23. 2021-06-15Т11:45. Минуты, в диапазоне от 00  до 59. 2021-06-15Т01:09."
+# pattern = "[0-2][0-9]:[0-5][0-9]"
+# print(re.findall(pattern, st))
+
+
+# s = "Я ищу совпадение в 2024 году. И я их [найду] в 2 счё-та. 198673 Hel_lo 20000000000000000000000000"
+# reg = r"[20]*"
+# print(re.findall(reg, s))
+
+# Кол-во повторений
+# + - от 1 до бесконечности
+# * - от 0 до бесконечности
+# ? - от 0 до 1
+
+# d = "Цифры: 7, +17, --42, 0013, 0.3"
+# reg = r'[+-]?[\d.]+'
+# print(re.findall(reg, d))
+
+
+# s = "05-03-1987 # Дата рождения"
+# print("Дата рождения:", re.sub(r"\s#.*", "", s))
+# print(re.sub('-', '.', s))
+# print("Дата рождения:", re.sub('-', '.', re.sub(r"\s#.*", "", s)))
+# # print("Дата рождения:", "05.03.1987")
+# # Дата рождения: 05.03.1987
+# print("Дата рождения", re.sub("-", ".", re.sub("\\s#.*", "", s)))
+
+# s = "author=Пушкин А.С.; title  = Евгений Онегин; price =200; year= 1831"
+# reg = r'\w+\s*=\s*[^;]+'
+# # reg = r'[^;]+'
+# print(re.findall(reg, s))
+
+# s = "12 сентября 2024 года 568789456"
+# reg = r"\d{2,4}"
+# print(re.findall(reg, s))
+
+
+# s = "Я ищу совпадение в 2024 году. И я их [найду] в 2 счё_та."
+# # reg = r"^\w+\s\w+"
+# reg = r"\w+\.$"
+# print(re.findall(reg, s))
+
+# def validate_login(login):
+#     return re.findall(r"^[A-Za-z0-9-]{3,16}$", login)
+#
+#
+# print(validate_login("Python-master"))
+
+
+################################ 28/02/2024 ###############################################################
+
+
+# s = "+7 499 456-45-78, +74994564578, 7 (499) 4564578, 74994564578"
+#
+# reg = r"\+?7\d{10}"   # Домашняя работа
+# print(re.findall(reg, s))
+
+
+# text = "Hello world"
+# print(re.findall(r"\w\+", text, re.DEBUG))
+
+
+# s = "Я ищу совпадение в 2024 году. И я их найду в 2 счёта."
+# reg = "я"
+# print(re.findall(reg, s, re.IGNORECASE))
+# print(re.findall(reg, s, re.I))
+
+#
+# text = """
+# one
+# two
+# """
+
+# print(re.findall(r"one.\w+", text))
+# print(re.findall(r"one.\w+", text, re.DOTALL))
+# print(re.findall(r"one$", text))
+# print(re.findall(r"one$", text, re.MULTILINE))
+
+
+# print(re.findall('''
+# [A-Za-z0-9._-]+   # part 1
+# @                 # @
+# [A-Za-z.-]+       # part 2
+# ''', 'test@mail.ru', re.VERBOSE))
+
+#
+# text ="""Python,
+# python,
+# PYTHON"""
+#
+# reg = "(?im)^python"
+# print(re.findall(reg, text))
+
+#
+# text = "<body>Пример жадного соответствия регулярных выражений</body>"
+# print(re.findall("<.*?>", text))
+#
+#
+# s = "12 сентября 2024 года 568789456"
+# reg = r"\d{2,4}"
+# print(re.findall(reg, s))
+
+
+# s = "Ольга и Виталий отлично учатся!"
+# reg = "Петр|Ольга|Виталий"
+# print(re.findall(reg, s))
+#
+# s = "int = 4, float = 4.0f, double = 8.0"
+# reg = r"\w+\s*=\s*\d[.\w+]*"
+# reg = r"\w+\s*=\s*\d[.\w+]{,2}"     #ищется интервал после запятой
+# reg = r"\w+\s*=\s*\d[.\w+]*|float\s*=\s*\d[.\w+]*"
+# reg = r"(?:int|float)\s*=\s*\d[.\w+]*"
+# reg = r"(int|float)\s*=\s*(\d[.\w+]*)"
+# print(re.findall(reg, s))
+# print(re.search(reg, s))
+
+# (?: ....) - группирующая скобка ге является сохранеяющей
+
+#
+# s = "5 + 7 * 2 - 4"
+# reg = r"(\s[+*-])\s*"
+# print(re.split(reg, s))
+#
+#
+# s = "28-02-2024"
+# reg = "(0[1-9]|[0-9][0-9]|3[01])-(0[1-9]|1[0-2])-(19[0-9][0-9]|20[0-9][0-9])"
+# print(re.findall(reg, s))
+# # print(re.search(reg, s))
+# print(re.search(reg, s).group())
