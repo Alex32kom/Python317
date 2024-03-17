@@ -3518,6 +3518,8 @@ import re
 # Модуль OS, OS.PATH
 
 import os
+import time
+
 
 # import os.path
 
@@ -3590,3 +3592,394 @@ import os
 # Work\F1\f13.txt
 # Work\F2\F21\f211.txt
 # Work\F2\F21\f212.txt
+
+
+#########################      11. 03.  2024 ################################# Новая пара !!!!
+
+# #
+# root = r'nested1\nested2'
+# objs = os.listdir(root)
+# print(objs)
+# objs = list(map(lambda i: os.path.join(root, i), objs))
+# # print(objs)
+#
+#
+# obj_sort = sorted(objs, key = os.path.isfile, reverse=True)
+# print(obj_sort)
+# print(sorted(objs, reverse=True))
+
+# print(os.path.isfile(r"nested1\nested2\res.txt"))    # возвращает True, если путь является файлом
+# print(os.path.isdir(r"nested1\nested2"))    # возвращает True, если путь является директорией
+
+
+# print(os.path.exists(r"nested1\nested2"))  #проверка на существование пути
+# print(os.path.getsize('main.py'))   #раазмер документа в байтах
+#
+# root = r'nested1\nested2'
+# if os.path.exists(root):
+#     print(os.path.getsize(root))
+#
+# # b = os.path.getsize('main.py')
+# # print(b, "байт")
+# # print(b // 1024)
+#
+#
+# path = 'main.py'
+# print(os.path.getctime(path))   # времся создания файла
+# print(os.path.getatime(path))    # возвращает время последнего доступа к файлу
+# print(os.path.getmtime(path))    # возвращает время последнего изменения в файлах ( в секундах)
+#
+# print(time.strftime("%d.%m%y, %H:%M:%S", time.localtime(os.path.getctime(path))))
+# print(time.strftime("%d.%m%y, %H:%M:%S", time.localtime(os.path.getatime(path))))
+# print(time.strftime("%d.%m%y, %H:%M:%S", time.localtime(os.path.getctime(path))))
+
+
+###############      ОБЪЕКТНО ОРИЕНТОРОВАНННОЕ  ПРОГРАМИРОВАНИЕ   !!!!!!!!!!!!!!!!!!!!!!
+
+#
+# class Point:
+#     """Класс для предоставления координат точек на плоскости"""
+#     x = 1
+#     y = 1
+#
+#
+# p1 = Point()
+# print(p1.x)
+# print(type(p1))
+# a = 5
+# print(type(a))
+# print(Point.__doc__)
+# print(Point.__name__)
+# print(dir(Point))
+
+
+# class Point:
+#     x = 1
+#     y = 1
+#
+#
+# p1 = Point()
+# p1.x = 10
+# p1.y = 20
+# p1.z = 30
+# print(p1.x, p1.y, p1.z)
+# print(p1.__dict__)
+#
+# p2= Point()
+# print(p2.x, p2.y)
+
+# print(id(Point))
+# print(id(p1))
+# print(id(p2))
+
+
+# class Point:
+#     x = 1
+#     y = 2
+#
+#     def set_coord(self):
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# p1.x = 5
+# p1.y = 10
+# p1.set_coord()
+# # Point.set_coord(p1)
+#
+# p2 = Point()
+# p2.x = 50
+# p2.y = 100
+# p2.set_coord()
+
+# class Point:
+#     x = 1
+#     y = 2
+#
+#     def set_coord(self, a, b):
+#         self.x = a
+#         self.y = b
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# # p1.x = 5
+# # p1.y = 10
+# p1.set_coord(5,10)
+# # Point.set_coord(p1)
+#
+# p2 = Point()
+# # p2.x = 50
+# # p2.y = 100
+# p2.set_coord(50, 100)
+
+
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ".center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\nНомер телефона: {self.phone}\nСтрана: "
+#               f"{self.country}\nГород: {self.city}\nДомашний адрес: {self.address}")
+#         print("=" * 40)
+#
+#     def input_info(self, first_name, birthday, phone, country, city, address):
+#         self.address = address
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.name = first_name
+#         self.country = country
+#         self.city = city
+#
+#     def set_name(self, name):  # установить имя
+#         self.name = name
+#
+#     def get_name(self):  # получить имя
+#         return self.name
+#
+#     def set_birthday(self, birthday):
+#         self.birthday = birthday
+#
+#     def get_birthday(self):
+#         return self.birthday
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1A")
+# h1.print_info()
+# h1.set_name("Юлия")
+# print(h1.get_name())
+# h1.set_birthday("23.12.1990")
+# print(h1.get_birthday())
+# h1.print_info()
+
+# class Person:
+#     skill = 10  # статическое
+#     count = 0  # 2
+#
+#     def __init__(self, name, surname):  # Инициализатор
+#         self.name = name  # динамическое
+#         self.surname = surname
+#         print("Инициализатор")
+#         Person.count += 1
+#
+#     def __del__(self):  # финализатор (деструктор)
+#         print("Удаление экземпляра:", self.__class__.__name__)
+#
+#     def print_info(self):
+#         print("Данные сотрудника:", self.name, self.surname)
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника:", self.skill, end="\n\n")
+#
+#
+# p1 = Person("Виктор", "Резник")
+# p1.print_info()
+# p1.add_skill(3)
+# # del p1
+# # p1 = 5
+#
+# p2 = Person("Анна", "Долгих")
+# p2.print_info()
+# p2.add_skill(2)
+#
+# p3 = Person("Анна", "Долгих")
+# print(p1.count)
+# print(p2.count)
+# print(Person.count)
+#
+#
+#
+# ############     13  03   2024    #################
+
+
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота:", self.name)
+#         Robot.k += 1
+#
+#     def __del__(self):
+#         print(self.name, "выключается!")
+#         Robot.k -= 1
+#
+#         if Robot.k == 0:
+#             print(self.name, "быд последним")
+#         else:
+#             print("Работающих роботов осталось:", Robot.k)
+#
+#     def say_hi(self):
+#         print("Приветствую! Меня зовут:", self.name)
+#
+#
+# droid1 = Robot('R2-D2')
+# droid1.say_hi()
+# print("Численность роботов:", Robot.k)
+# droid2 = Robot('C-3PO')
+# droid2.say_hi()
+# print("Численность роботов:", Robot.k)
+# droid3 = Robot('P-2CO')
+# droid2.say_hi()
+# print("Численность роботов:", Robot.k)
+# print("\nЗдесь роботы могут проделать какую-то работу\n")
+# print("Роботы закончили свою работу. Давайте их выключим")
+# del droid1
+# del droid2
+# del droid3
+# print("Численность роботов:", Robot.k)
+
+#
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = self.__y = 0
+#         if Point.__check_value__(x) and Point.__check_value__(y):
+#             self.__x = x  # _Point__x
+#             self.__y = y  # _Point__y
+#
+#     def __check_value__(a):  # Point__check_value__()
+#         if isinstance(a, int) or isinstance(a, float):
+#             return True
+#         return False
+#
+#     def set_coort(self, x, y):
+#
+#         # if (isinstance(x, int) or isinstance(x, float)) and (isinstance(y, int) or isinstance(y, float)):
+#         if Point.__check_value__(x) and Point.__check_value__(y):
+#             self.__x = x
+#             self.__y = y
+#         else:
+#             print("Координаты должны быть числами")
+#
+#     def get_coort(self):
+#         return self.__x, self.__y
+#
+#     def set_x(self, x):
+#         if Point.__check_value__(x):
+#             self.__x = x
+#         else:
+#             print("координата Х должна быть числом")
+#
+#     def set_y(self, y):
+#         if Point.__check_value__(y):
+#             self.__y = y
+#         else:
+#             print("координата Y должна быть числом")
+#
+#     def get_x(self):
+#         return self.__x
+#
+#     def get_y(self):
+#         return self.__y
+#
+#
+# p1 = Point("abc", 10)
+# print(p1.get_coort())
+# # p1.set_coort(100,"abc")
+# # print(p1.get_coort())
+# # # print(p1.__x, p1.__y)
+# # p1.__x = 100
+# # p1.__y = "abc"
+# # print(p1.__x, p1.__y)
+# p1.set_x(50)
+# print(p1.get_x())
+# p1.set_y(30)
+# print(p1.get_y())
+# p1.Point__x = 111
+# print(p1.__dict__)
+# print(p1._Point__x)
+
+
+# p2.x = 50
+# # p2.y = 100
+# p2.set_coord(50, 100)
+# Point.set_coord(p2)
+
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ".center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\nНомер телефона: {self.phone}\nСтрана: "
+#               f"{self.country}\nГород: {self.city}\nДомашний адрес: {self.address}")
+#         print("=" * 40)
+#
+#     def input_info(self, first_name, birthday, phone, country, city, address):
+#         self.address = address
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.name = first_name
+#         self.country = country
+#         self.city = city
+#
+#     def set_name(self, name):  # установить имя
+#         self.name = name
+#
+#     def get_name(self):  # получить имя
+#         return self.name
+#
+#     def set_birthday(self, birthday):
+#         self.birthday = birthday
+#
+#     def get_birthday(self):
+#         return self.birthday
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1A")
+# h1.print_info()
+# h1.set_name("Юлия")
+# print(h1.get_name())
+# h1.set_birthday("23.12.1990")
+# print(h1.get_birthday())
+# h1.print_info()
+#
+# class Person:
+#     skill = 10  # статическое
+#     count = 0  # 2
+#
+#     def __init__(self, name, surname):  # Инициализатор
+#         self.name = name  # динамическое
+#         self.surname = surname
+#         print("Инициализатор")
+#         Person.count += 1
+#
+#     def __del__(self):  # финализатор (деструктор)
+#         print("Удаление экземпляра:", self.__class__.__name__)
+#
+#     def print_info(self):
+#         print("Данные сотрудника:", self.name, self.surname)
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника:", self.skill, end="\n\n")
+#
+#
+# p1 = Person("Виктор", "Резник")
+# p1.print_info()
+# p1.add_skill(3)
+# # del p1
+# # p1 = 5
+#
+# p2 = Person("Анна", "Долгих")
+# p2.print_info()
+# p2.add_skill(2)
+#
+# p3 = Person("Анна", "Долгих")
+# print(p1.count)
+# print(p2.count)
+# print(Person.count)
