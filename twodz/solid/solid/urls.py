@@ -23,7 +23,7 @@ from skills import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('blog/', include('blogs.urls')),
+    path('blog/', include('blog.urls')),
 
 
 
