@@ -1,5 +1,5 @@
 """
-URL configuration for todos project.
+URL configuration for dip project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,17 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Auth
-    path('signup/', views.signupuser, name='signupuser'),
-    path('logout/', views.logoutuser, name='logoutuser'),
-    path('login/', views.loginuser, name='loginuser'),
-
-    # Todos
-    path('current/', views.currenttodos, name='currenttodos'),
-    path('', views.home, name='home'),
 ]
