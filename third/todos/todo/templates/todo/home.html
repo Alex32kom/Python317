@@ -1,4 +1,4 @@
-{% extends 'todo/base.html'%}
+{% extends 'todo/base.html' %}
 
 {% block content %}
 
@@ -11,6 +11,9 @@
         бизнесом.</p>
     <p>Помогает находить слабые стороны в работе сотрудников и
         улучшать уровень обслуживания клиентов.</p>
+    <form action="{% url 'loginuser' %}" >
+        <button class="btn">Начать</button>
+    </form>
 </div>
 
 {% endblock %}
